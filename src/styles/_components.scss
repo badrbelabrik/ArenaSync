@@ -69,7 +69,7 @@
                     display:flex;
                     flex-direction: column;
                     justify-content: center;
-                    align-items: center;
+                    gap: $space-xs;
                 }
                 &-title{
                     font-weight: $font-weight-bold;
@@ -100,7 +100,6 @@
         }
     }
     p{
-                    font-weight: $font-weight-bold;
                     font-family: $font-family-geneva;
     }
 }
@@ -110,3 +109,20 @@
       height: 2px;
       background-color: $gray;
     }
+
+.badge{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: $space-xs;
+      background: linear-gradient(90deg, #78ff7e, #09b811);
+      border-radius: $radius-md;
+      width: 64px;
+      height: 12px;
+      &-title{
+        color:white;
+        font-size: x-small;
+        font-weight: $font-weight-bold;
+        font-family: $font-family-geneva;
+      }
+}

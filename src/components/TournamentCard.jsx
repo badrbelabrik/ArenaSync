@@ -1,4 +1,5 @@
 import React from "react";
+import { StatusBadge } from "./StatusBadge";
 
 export function TournamentCard(){
     return (
@@ -7,7 +8,7 @@ export function TournamentCard(){
                 <img className="tournament-card-header-img" src="./src/images/card-logo.jpg" alt="" />
                 <div className="tournament-card-header-flex">
                     <p className="tournament-card-header-title">Shuttle Masters League</p>
-                    // badge place
+                    <StatusBadge />
                 </div>  
             </div>  
             <p>Top players battle it out with skillful rallies
