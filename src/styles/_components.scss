@@ -23,8 +23,7 @@
             height: 42px;
             background-color: $gray;
             border-radius: 999px;
-            border: solid;
-            border-color: whitesmoke;
+            border: solid whitesmoke;
         }
     }
 }
@@ -131,7 +130,6 @@
       justify-content: center;
       align-items: center;
       padding: $space-xs;
-      background: linear-gradient(90deg, #78ff7e, #09b811);
       border-radius: $radius-md;
       width: 64px;
       height: 12px;
@@ -141,7 +139,17 @@
         font-weight: $font-weight-bold;
         font-family: $font-family-geneva;
       }
+  &-green{
+         background: linear-gradient(90deg, #78ff7e, #09b811);
+       }
+  &-blue{
+    background: linear-gradient(90deg, #1b6a89, #003050);
+  }
+  &-gray{
+    background: linear-gradient(90deg, #a3a8a3, #888787);
+  }
 }
+
 
 .participant{
     display: flex;
