@@ -49,6 +49,19 @@
   }
   &-icon{
     color: #6e7175;
+    cursor: pointer;
+  }
+  &-filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $space-sm;
+    background-color: #3B33E4;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    &-icon{
+        color: rgb(197, 197, 197);
+    }
   }
 }
 
@@ -88,6 +101,7 @@
       &-rules{
                 display: flex;
                 flex-direction: column;
+                gap: $space-xs;
                 
         }
     &-rule{
@@ -95,12 +109,14 @@
         align-items: center;
         gap: $space-sm;
         margin: 0;
+        color: rgb(66, 66, 66);
         &-icon{
             color: rgb(66, 66, 66)
         }
     }
     p{
                     font-family: $font-family-geneva;
+                    margin: 0;
     }
 }
 
@@ -125,4 +141,45 @@
         font-weight: $font-weight-bold;
         font-family: $font-family-geneva;
       }
+}
+
+.participant{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $space-sm;
+    padding: $space-sm;
+    border-radius: $radius-md;
+    background-color: #E6F7E6;
+    font-weight: $font-weight-bold;
+    &-content{            
+        display: flex;
+        align-items: center;
+        gap: $space-sm;
+        &-img{
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            border: solid;
+            border-color: whitesmoke;
+        }
+        &-name{
+            font-family: $font-family-geneva;
+        }
+    }
+    &-status{
+        display: flex;
+        align-items: center;
+        gap: $space-sm;
+        color: $primary-green;
+    }
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $space-md;
 }

@@ -1,17 +1,18 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.scss'
 import { Header } from './components/Header'
 import { Searchbar } from './components/Searchbar'
-import { TournamentCard } from './components/TournamentCard'
+import { CardsContainer} from './components/TournamentCard'
+import { tournamentDB } from './data/tournamentDB'
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("")
+  // const filteredTournaments = tournamentDB.filter(...)
   return (
     <>    
       <Header/>
-      <Searchbar/>
-      <TournamentCard/>
+      <Searchbar value={searchTerm} onChange={setSearchTerm}/>
+      <CardsContainer tournaments={tournamentDB}/>
     </>
   )
 }

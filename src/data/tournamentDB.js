@@ -1,0 +1,70 @@
+
+
+export const tournamentDB = [
+  {
+    id: 1,
+    title: "Shuttle Masters League",
+    status: "On Going", // "On Going" | "Upcoming" | "Completed"
+    description:
+      "Top players battle it out with skillful rallies and powerful smashes.",
+    participants: { current: 24, max: 32 },
+    visibility: "Public", // "Public" | "Private"
+    format: "Single Elimination", // e.g. "Single Elimination" | "League" | "Groups"
+    date: "2025-10-12",
+    location: "Badminton Hall 1",
+    logo: "./src/images/badminton.jpg",
+    sport: "Badminton",
+  },
+  {
+    id: 2,
+    title: "Hoops Championship",
+    status: "Upcoming",
+    description: "Intense games filled with teamwork, speed, and sharp shooting.",
+    participants: { current: 8, max: 12 },
+    visibility: "Community",
+    format: "League",
+    date: "2025-11-02",
+    location: "Indoor Arena - Court A",
+    logo: "./src/images/basketball.png",
+    sport: "Basketball",
+  },
+  {
+    id: 3,
+    title: "City Chess Open",
+    status: "Upcoming",
+    description: "Rapid and classic matches for all levels with official pairing.",
+    participants: { current: 56, max: 64 },
+    visibility: "Public",
+    format: "Swiss",
+    date: "2025-09-21",
+    location: "Downtown Library Hall",
+    logo: "./src/images/chess.png",
+    sport: "Chess",
+  },
+  {
+    id: 4,
+    title: "Summer Five-a-side Cup",
+    status: "Completed",
+    description: "Fast-paced 5v5 tournament with group stage and playoffs.",
+    participants: { current: 16, max: 16 },
+    visibility: "Private",
+    format: "Groups",
+    date: "2025-07-18",
+    location: "Green Field Complex",
+    logo: "./src/images/football.jpg",
+    sport: "Football",
+  },
+  {
+    id: 5,
+    title: "Table Tennis Clash",
+    status: "On Going",
+    description: "Quick matches, best-of-5 sets, and a double-elim finals.",
+    participants: { current: 12, max: 24 },
+    visibility: "Public",
+    format: "Double Elimination",
+    date: "2025-10-03",
+    location: "Community Sports Center",
+    logo: "./src/images/tennis.jpg",
+    sport: "Table Tennis",
+  },
+];
