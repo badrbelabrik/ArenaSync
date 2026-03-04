@@ -17,8 +17,8 @@ export function TournamentCard({tournament}){
                 <div className="tournament-card-header-flex">
                     <p className="tournament-card-header-title">{tournament.title}</p>
                     <StatusBadge status={tournament.status}/>
-                </div>  
-            </div>  
+                </div>
+            </div>
             <p>{tournament.description}</p>
             <div className="divider"></div>
             <div className="tournament-card-rules">
