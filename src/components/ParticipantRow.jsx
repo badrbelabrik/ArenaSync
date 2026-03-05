@@ -8,7 +8,7 @@ export function ParticipantRow(){
                 <span className="participant-content-name">Ethan Miller</span>
             </div>
             <div className="participant-status">
-                <i class="fa-solid fa-circle-check"></i>
+                <i className="fa-solid fa-circle-check"></i>
                 <span>Confirmed</span>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { StatusBadge } from "./StatusBadge";
+import {Link} from "react-router-dom";
 
 export function CardsContainer({tournaments}){
     return (
@@ -11,7 +12,8 @@ export function CardsContainer({tournaments}){
 
 export function TournamentCard({tournament}){
     return (
-        <div className="tournament-card">
+
+        <Link to={`/tournament/${tournament.id}`} className="tournament-card">
             <div className="tournament-card-header">
                 <img className="tournament-card-header-img" src={tournament.logo} alt="" />
                 <div className="tournament-card-header-flex">
@@ -27,6 +29,6 @@ export function TournamentCard({tournament}){
                 <div className="tournament-card-rule"><i className="fa-solid fa-clipboard-list"></i> <p>{tournament.date}</p></div>
                 <div className="tournament-card-rule"><i className="fa-solid fa-location-dot"></i> <p>{tournament.location}</p></div>
             </div>
-        </div>
+        </Link>
     )
 }

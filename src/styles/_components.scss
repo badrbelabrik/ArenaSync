@@ -1,11 +1,13 @@
 @use "variables" as *;
 @use './mixins' as *;
 
+
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
     &-title{
         font-family: $font-family-geneva;
         font-weight: $font-weight-bold;
@@ -32,7 +34,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // background-color: $gray;
   border-radius: $radius-sm;
   padding-right: $space-sm;
   padding-left: $space-sm;
@@ -44,6 +45,10 @@
       border: none;
       outline: none;
       background: transparent;
+  }
+  &-btn{
+    background: none;
+    border: none;
   }
   &-icon{
     color: #6e7175;
@@ -72,7 +77,11 @@
     box-shadow: $shadow-md;
     padding: $space-md;
     border-radius: $radius-md;
-    
+    text-decoration: none;
+    color: inherit;
+      &:hover{
+        transform: scale(1.1)
+      }
         &-header{
             display: flex;
             gap: $space-md;
@@ -188,5 +197,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: $space-md;
+    gap: $space-lg;
 }

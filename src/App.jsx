@@ -4,7 +4,7 @@ import { Header } from './components/Header'
 import { Searchbar } from './components/Searchbar'
 import { CardsContainer} from './components/TournamentCard'
 import { tournamentDB } from './data/tournamentDB'
-import { BrowserRouter } from 'react-router-dom'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -21,13 +21,25 @@ function App() {
 
   return (
     <>    
-      <Header/>
-      <Searchbar value={searchTerm} onChange={setSearchTerm}/>
-      <CardsContainer tournaments={tournaments}/>
+
       
       <BrowserRouter>
-      
-      </BrowserRouter>
+          <Routes>
+              {/*Home Page*/}
+              <Route path="/" element={
+                  <>
+                      <Header/>
+                      <Searchbar value={searchTerm} onChange={setSearchTerm}/>
+                      <CardsContainer tournaments={tournaments}/>
+                  </>
+              }/>
+              {/*Tournament Page*/}
+              <Route path="/details/:id"/>
+          </Routes>
+
+            </BrowserRouter>
+
+
     </>
     
   )

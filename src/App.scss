@@ -3,6 +3,9 @@
 @use './styles/components' as *;
 @use './styles/responsive' as *;
 
+body{
+  background-color: #f3f4f6
+}
 
 #root {
   margin: 0 auto;
