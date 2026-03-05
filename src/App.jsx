@@ -24,7 +24,12 @@ function App() {
       <Header/>
       <Searchbar value={searchTerm} onChange={setSearchTerm}/>
       <CardsContainer tournaments={tournaments}/>
+      
+      <BrowserRouter>
+      
+      </BrowserRouter>
     </>
+    
   )
 }
 
