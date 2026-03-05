@@ -4,7 +4,7 @@ import { StatusBadge } from "./StatusBadge";
 export function CardsContainer({tournaments}){
     return (
         <div className="container">
-            {tournaments.map(tournament => <TournamentCard key={tournament.id} tournament={tournament} />)}
+            {tournaments.length > 0 ? tournaments.map(tournament => <TournamentCard key={tournament.id} tournament={tournament} />) : "No Tournaments Found"}
         </div>
     )
 }

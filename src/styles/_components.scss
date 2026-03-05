@@ -10,7 +10,7 @@
         font-family: $font-family-geneva;
         font-weight: $font-weight-bold;
         font-size: 20px;
-        color: $gray;
+
     }
     &-content{
         display: flex;
@@ -21,7 +21,6 @@
             @include flex-center;
             width: 42px;
             height: 42px;
-            background-color: $gray;
             border-radius: 999px;
             border: solid whitesmoke;
         }
@@ -143,7 +142,7 @@
          background: linear-gradient(90deg, #78ff7e, #09b811);
        }
   &-blue{
-    background: linear-gradient(90deg, #1b6a89, #003050);
+    background: linear-gradient(90deg, #45caff, #1e93c1);
   }
   &-gray{
     background: linear-gradient(90deg, #a3a8a3, #888787);
