@@ -6,6 +6,7 @@ import { CardsContainer} from './components/TournamentCard'
 import { tournamentDB } from './data/tournamentDB'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import {Navbar} from './components/Navbar'
+import {Tabsystem} from "./components/TabSystem";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -21,27 +22,23 @@ function App() {
           }
 
   return (
-    <>    
-
-      
+    <>
       <BrowserRouter>
           <Routes>
               {/*Home Page*/}
               <Route path="/" element={
                   <>
                       <Header/>
+                      <Tabsystem />
                       <Searchbar value={searchTerm} onChange={setSearchTerm}/>
                       <CardsContainer tournaments={tournaments}/>
                       <Navbar />
                   </>
               }/>
               {/*Tournament Page*/}
-              <Route path="/details/:id"/>
+              <Route path="/tournament/:id"/>
           </Routes>
-
             </BrowserRouter>
-
-
     </>
     
   )
