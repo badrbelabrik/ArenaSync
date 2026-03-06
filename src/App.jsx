@@ -7,6 +7,7 @@ import { tournamentDB } from './data/tournamentDB'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import {Navbar} from './components/Navbar'
 import {Tabsystem} from "./components/TabSystem";
+import {TournamentDetails} from "./components/TournamentDetails";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -36,7 +37,13 @@ function App() {
                   </>
               }/>
               {/*Tournament Page*/}
-              <Route path="/tournament/:id"/>
+              <Route path="/tournament/:id" element={
+                  <>
+                    <TournamentDetails />
+                    <Navbar />
+                  </>
+              }/>
+
           </Routes>
             </BrowserRouter>
     </>

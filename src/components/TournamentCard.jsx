@@ -12,7 +12,6 @@ export function CardsContainer({tournaments}){
 
 export function TournamentCard({tournament}){
     return (
-
         <Link to={`/tournament/${tournament.id}`} className="tournament-card">
             <div className="tournament-card-header">
                 <img className="tournament-card-header-img" src={tournament.logo} alt="" />
