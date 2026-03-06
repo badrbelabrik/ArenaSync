@@ -5,6 +5,7 @@ import { Searchbar } from './components/Searchbar'
 import { CardsContainer} from './components/TournamentCard'
 import { tournamentDB } from './data/tournamentDB'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {Navbar} from './components/Navbar'
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -31,6 +32,7 @@ function App() {
                       <Header/>
                       <Searchbar value={searchTerm} onChange={setSearchTerm}/>
                       <CardsContainer tournaments={tournaments}/>
+                      <Navbar />
                   </>
               }/>
               {/*Tournament Page*/}

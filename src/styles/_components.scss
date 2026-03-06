@@ -29,6 +29,37 @@
     }
 }
 
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top-left-radius: $radius-md;
+  border-top-right-radius: $radius-md;
+  height: 52px;
+  background-color: white;
+  box-shadow: $shadow-md;
+  &-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $space-sm;
+    background: none;
+    border: none;
+    font-size: 18px;
+    height: 42px;
+    border-radius: $radius-md;
+    cursor: pointer;
+    &:hover{
+      color: whitesmoke;
+      background: linear-gradient(90deg, $primary-color, $secondary-color);
+    }
+  }
+
+}
+
 .search-bar{
   width: 100%;
   display: flex;
@@ -198,4 +229,5 @@
     justify-content: center;
     align-items: center;
     gap: $space-lg;
+  padding-bottom: 48px;
 }
