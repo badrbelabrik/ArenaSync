@@ -30,7 +30,6 @@ function App() {
               <Route path="/" element={
                   <>
                       <Header/>
-                      <Tabsystem />
                       <Searchbar value={searchTerm} onChange={setSearchTerm}/>
                       <CardsContainer tournaments={tournaments}/>
                       <Navbar />

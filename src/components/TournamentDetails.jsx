@@ -37,7 +37,6 @@ export function TournamentDetails() {
                 <h2>Participants List</h2>
                 <div className="details-participantslist-participants">
                     {tournament.participants.length > 0 ? tournament.participants.map(item => <ParticipantRow key={item.id} name={item.name} avatar={item.avatar} status={item.status} />) : "No Participants Found"}
-
                 </div>
             </div>
 

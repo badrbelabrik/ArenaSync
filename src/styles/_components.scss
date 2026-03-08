@@ -198,8 +198,13 @@
     gap: $space-sm;
     padding: $space-sm;
     border-radius: $radius-md;
-    background-color: #E6F7E6;
     font-weight: $font-weight-bold;
+    &-confirmed{
+      background-color: #E6F7E6;
+    }
+    &-pending{
+      background-color: #ffeac1;
+    }
     &-content{            
         display: flex;
         align-items: center;
@@ -208,18 +213,26 @@
             width: 32px;
             height: 32px;
             border-radius: 999px;
-            border: solid;
-            border-color: whitesmoke;
         }
         &-name{
             font-family: $font-family-geneva;
         }
     }
     &-status{
+
+      &-confirmed{
         display: flex;
         align-items: center;
-        gap: $space-sm;
+        gap: 6px;
         color: $primary-green;
+      }
+      &-pending{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #ffaa00;
+      }
+
     }
 }
 
@@ -277,7 +290,7 @@
   &-participantslist{
     width: 100%;
     @include flex-col-center;
-    gap: 8px;
+    gap: 16px;
     background-color: white;
     border-radius: $radius-md;
     font-family: $font-family-geneva;
@@ -291,6 +304,7 @@
        display: grid;
        grid-template-columns: repeat(2, 1fr);
        grid-column-gap: $space-md;
+       grid-row-gap: $space-md;
 
      }
   }

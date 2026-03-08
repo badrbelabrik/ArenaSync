@@ -1,6 +1,7 @@
 import React from "react";
 
 export function Tabsystem(){
+    
     return (
         <div className="tabsystem">
             <div className="tabsystem-element">Info</div>
