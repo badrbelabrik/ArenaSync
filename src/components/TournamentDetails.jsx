@@ -5,15 +5,20 @@ import {TournamentCard} from "./TournamentCard.jsx";
 import {StatusBadge} from "./StatusBadge.jsx";
 import {Tabsystem} from "./TabSystem.jsx";
 import {ParticipantRow} from "./ParticipantRow.jsx";
+import {useNavigate} from "react-router-dom";
 
 
 export function TournamentDetails() {
+    const navigate = useNavigate();
     const {id} = useParams();
     const [tournament, setTournament] = useState(tournamentDB.find(item => item.id == id))
     return (
         <div className="details">
             <div className="details-header">
-                <div></div>
+                <div className="details-header-title">
+                    <i onClick={() => navigate("/")} className="details-header-title-icon fa-solid fa-chevron-left"></i>
+                    <h1 className="details-header-title-name">Tournament</h1>
+                </div>
                 <div className="details-tournament-card">
                     <div className="details-tournament-card-header">
                         <img className="details-tournament-card-header-img" src={tournament.logo} alt="" />

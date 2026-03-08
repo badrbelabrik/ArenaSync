@@ -13,14 +13,11 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("")
   const [tournaments, setTournaments] = useState(tournamentDB)
   useEffect(()=>{
-    searchTournaments()
-  },[searchTerm])
-
-  function searchTournaments(){
       if(searchTerm === ""){setTournaments(tournamentDB); return}
       const filterBySearch = tournamentDB.filter(item => item.title.toLowerCase().includes(searchTerm.toLowerCase()))
       setTournaments(filterBySearch)
-          }
+  },[searchTerm])
+
 
   return (
     <>

@@ -168,7 +168,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: $space-xs;
+      padding: $space-sm;
       border-radius: $radius-md;
       width: 64px;
       height: 12px;
@@ -286,6 +286,21 @@
     padding: $space-sm;
     background: linear-gradient(136deg,$primary-color,$secondary-color, #aaa2e6) ;
     border-radius: $radius-md;
+      &-title{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-icon{
+          position: absolute;
+          left: 0;
+          cursor: pointer;
+        }
+        &-name{
+
+      }
+      }
+
   }
   &-participantslist{
     width: 100%;
