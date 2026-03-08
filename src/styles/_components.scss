@@ -260,3 +260,89 @@
 
   }
 }
+
+.details{
+  @include flex-col-center;
+  gap: $space-md;
+
+  &-header{
+    @include flex-col-center;
+    width: 100%;
+    gap: $space-sm;
+    color: white;
+    padding: $space-sm;
+    background: linear-gradient(136deg,$primary-color,$secondary-color, #aaa2e6) ;
+    border-radius: $radius-md;
+  }
+  &-participantslist{
+    width: 100%;
+    @include flex-col-center;
+    gap: 8px;
+    background-color: white;
+    border-radius: $radius-md;
+    font-family: $font-family-geneva;
+    font-weight: $font-weight-bold;
+    padding: 12px;
+      h2{
+        margin: 0;
+        }
+     &-participants{
+       width: 100%;
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       grid-column-gap: $space-md;
+
+     }
+  }
+
+}
+
+.details-tournament-card{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $space-sm;
+  &-header{
+    display: flex;
+    gap: $space-md;
+    &-flex{
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: $space-xs;
+    }
+    &-title{
+      font-weight: $font-weight-bold;
+      font-family: $font-family-geneva;
+      font-size: medium;
+      margin: 0;
+    }
+    &-img{
+      width: 48px;
+      height: 48px;
+      border-radius: $radius-sm;
+      align-self: center;
+    }
+
+  }
+  &-rules{
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+
+  }
+  &-rule{
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+    margin: 0;
+    &-icon{
+      color: rgb(66, 66, 66)
+    }
+  }
+  p{
+    font-family: $font-family-geneva;
+    margin: 0;
+  }
+}

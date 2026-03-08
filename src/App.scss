@@ -2,7 +2,11 @@
 @use './styles/mixins' as *;
 @use './styles/components' as *;
 @use './styles/responsive' as *;
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body{
   background-color: #f3f4f6
 }

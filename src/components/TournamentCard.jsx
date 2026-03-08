@@ -23,7 +23,7 @@ export function TournamentCard({tournament}){
             <p>{tournament.description}</p>
             <div className="divider"></div>
             <div className="tournament-card-rules">
-                <div className="tournament-card-rule"><i className="fa-solid fa-users"></i> <p>{tournament.participants.current}/{tournament.participants.max} Participants - {tournament.visibility}</p></div>
+                <div className="tournament-card-rule"><i className="fa-solid fa-users"></i> <p>{tournament.participantsCount.current}/{tournament.participantsCount.max} Participants - {tournament.visibility}</p></div>
                 <div className="tournament-card-rule"><i className="fa-solid fa-trophy"></i> <p>{tournament.format}</p></div>
                 <div className="tournament-card-rule"><i className="fa-solid fa-clipboard-list"></i> <p>{tournament.date}</p></div>
                 <div className="tournament-card-rule"><i className="fa-solid fa-location-dot"></i> <p>{tournament.location}</p></div>

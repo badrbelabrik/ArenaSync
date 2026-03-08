@@ -7,12 +7,18 @@ export const tournamentDB = [
     status: "On Going", // "On Going" | "Upcoming" | "Completed"
     description:
       "Top players battle it out with skillful rallies and powerful smashes.",
-    participants: { current: 24, max: 32 },
+    participantsCount: { current: 24, max: 32 },
+    participants: [
+      { id: "u1", name: "Ethan Miller", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u1" },
+      { id: "u2", name: "Noah Smith", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u2" },
+      { id: "u3", name: "James Anderson", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u3" },
+      { id: "u4", name: "David Hall", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u4" }
+    ],
     visibility: "Public", // "Public" | "Private"
     format: "Single Elimination", // e.g. "Single Elimination" | "League" | "Groups"
     date: "2025-10-12",
     location: "Badminton Hall 1",
-    logo: "./src/images/badminton.jpg",
+    logo: "/images/badminton.jpg",
     sport: "Badminton",
   },
   {
@@ -20,12 +26,13 @@ export const tournamentDB = [
     title: "Hoops Championship",
     status: "Upcoming",
     description: "Intense games filled with teamwork, speed, and sharp shooting.",
-    participants: { current: 8, max: 12 },
+    participantsCount: { current: 8, max: 12 },
+    participants: [],
     visibility: "Community",
     format: "League",
     date: "2025-11-02",
     location: "Indoor Arena - Court A",
-    logo: "./src/images/basketball.png",
+    logo: "/images/basketball.png",
     sport: "Basketball",
   },
   {
@@ -33,12 +40,16 @@ export const tournamentDB = [
     title: "City Chess Open",
     status: "Upcoming",
     description: "Rapid and classic matches for all levels with official pairing.",
-    participants: { current: 56, max: 64 },
+    participantsCount: { current: 56, max: 64 },
+    participants: [
+      { id: "u5", name: "Aiden Davis", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u5" },
+      { id: "u6", name: "Daniel Thomas", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u6" }
+    ],
     visibility: "Public",
     format: "Swiss",
     date: "2025-09-21",
     location: "Downtown Library Hall",
-    logo: "./src/images/chess.png",
+    logo: "/images/chess.png",
     sport: "Chess",
   },
   {
@@ -46,12 +57,17 @@ export const tournamentDB = [
     title: "Summer Five-a-side Cup",
     status: "Completed",
     description: "Fast-paced 5v5 tournament with group stage and playoffs.",
-    participants: { current: 16, max: 16 },
+    participantsCount: { current: 16, max: 16 },
+    participants: [
+      { id: "u1", name: "Ethan Miller", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u1" },
+      { id: "u2", name: "Noah Smith", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u2" },
+      { id: "u3", name: "James Anderson", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u3" }
+    ],
     visibility: "Private",
     format: "Groups",
     date: "2025-07-18",
     location: "Green Field Complex",
-    logo: "./src/images/football.jpg",
+    logo: "/images/football.jpg",
     sport: "Football",
   },
   {
@@ -59,12 +75,16 @@ export const tournamentDB = [
     title: "Table Tennis Clash",
     status: "On Going",
     description: "Quick matches, best-of-5 sets, and a double-elim finals.",
-    participants: { current: 12, max: 24 },
+    participantsCount: { current: 12, max: 24 },
+    participants: [
+      { id: "u5", name: "Aiden Davis", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u5" },
+      { id: "u6", name: "Daniel Thomas", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u6" }
+    ],
     visibility: "Public",
     format: "Double Elimination",
     date: "2025-10-03",
     location: "Community Sports Center",
-    logo: "./src/images/tennis.jpg",
+    logo: "/images/tennis.jpg",
     sport: "Table Tennis",
   },
 ];
