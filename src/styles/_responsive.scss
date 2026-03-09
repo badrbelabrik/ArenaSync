@@ -4,6 +4,7 @@
 @media (min-width: 800px){
     #root {
         max-width: 1080px;
+        min-width: 600px;
     }
     .container{
         display: grid;

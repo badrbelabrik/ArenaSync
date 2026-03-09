@@ -41,6 +41,7 @@
   height: 52px;
   background-color: white;
   box-shadow: $shadow-md;
+  margin-top: 48px;
   &-btn{
     display: flex;
     justify-content: center;
@@ -242,7 +243,7 @@
     justify-content: center;
     align-items: center;
     gap: $space-lg;
-  padding-bottom: 48px;
+    padding-bottom: 48px;
 }
 
 .tabsystem{
@@ -277,7 +278,7 @@
 .details{
   @include flex-col-center;
   gap: $space-md;
-
+  padding-bottom: 48px;
   &-header{
     @include flex-col-center;
     width: 100%;
@@ -373,5 +374,73 @@
   p{
     font-family: $font-family-geneva;
     margin: 0;
+  }
+}
+
+.filter-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.filter-popup {
+  width: 340px;
+  max-width: 90%;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    h3 {
+      margin: 0;
+    }
+  }
+
+  &-close {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    p {
+      margin: 0;
+      font-weight: 600;
+    }
+  }
+
+  &-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &-option {
+    border: none;
+    background: #f1f1f1;
+    padding: 10px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+
+    &:hover {
+      background: #3B33E4;
+      color: white;
+    }
   }
 }

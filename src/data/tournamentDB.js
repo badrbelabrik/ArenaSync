@@ -87,4 +87,89 @@ export const tournamentDB = [
     logo: "/images/tennis.jpg",
     sport: "Table Tennis",
   },
+  {
+    id: 6,
+    title: "Volleyball Power Cup",
+    status: "Upcoming",
+    description: "High energy matches with strong spikes and team coordination.",
+    participantsCount: { current: 10, max: 16 },
+    participants: [
+      { id: "u7", name: "Lucas Brown", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u7" },
+      { id: "u8", name: "Mason Wilson", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u8" }
+    ],
+    visibility: "Public",
+    format: "Groups",
+    date: "2025-12-05",
+    location: "City Sports Arena",
+    logo: "/images/volleyball.png",
+    sport: "Volleyball",
+  },
+  {
+    id: 7,
+    title: "Streetball Challenge",
+    status: "On Going",
+    description: "3v3 street basketball tournament with fast paced action.",
+    participantsCount: { current: 6, max: 12 },
+    participants: [
+      { id: "u9", name: "Oliver Garcia", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u9" },
+      { id: "u10", name: "Benjamin Martinez", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u10" }
+    ],
+    visibility: "Community",
+    format: "Single Elimination",
+    date: "2025-09-10",
+    location: "Urban Playground Court",
+    logo: "/images/basketball.png",
+    sport: "Basketball",
+  },
+  {
+    id: 8,
+    title: "Autumn Tennis Open",
+    status: "Upcoming",
+    description: "Outdoor tennis tournament open to all amateur players.",
+    participantsCount: { current: 14, max: 32 },
+    participants: [
+      { id: "u11", name: "William Taylor", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u11" },
+      { id: "u12", name: "Henry Moore", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u12" }
+    ],
+    visibility: "Public",
+    format: "Single Elimination",
+    date: "2025-10-20",
+    location: "Central Park Courts",
+    logo: "/images/tennis.jpg",
+    sport: "Tennis",
+  },
+  {
+    id: 9,
+    title: "Regional Badminton Cup",
+    status: "Completed",
+    description: "Regional players compete in intense badminton matches.",
+    participantsCount: { current: 32, max: 32 },
+    participants: [
+      { id: "u13", name: "Alexander Scott", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u13" },
+      { id: "u14", name: "Sebastian Adams", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u14" }
+    ],
+    visibility: "Public",
+    format: "League",
+    date: "2025-06-14",
+    location: "Regional Sports Hall",
+    logo: "/images/badminton.jpg",
+    sport: "Badminton",
+  },
+  {
+    id: 10,
+    title: "Winter Chess Masters",
+    status: "Upcoming",
+    description: "Strategic chess battles between the best local players.",
+    participantsCount: { current: 40, max: 64 },
+    participants: [
+      { id: "u15", name: "Michael Clark", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u15" },
+      { id: "u16", name: "Jack Lewis", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u16" }
+    ],
+    visibility: "Public",
+    format: "Swiss",
+    date: "2025-12-12",
+    location: "Grand Hotel Conference Hall",
+    logo: "/images/chess.png",
+    sport: "Chess",
+  }
 ];
