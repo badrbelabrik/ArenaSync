@@ -111,9 +111,6 @@
     border-radius: $radius-md;
     text-decoration: none;
     color: inherit;
-      &:hover{
-        transform: scale(1.1)
-      }
         &-header{
             display: flex;
             gap: $space-md;
@@ -157,7 +154,25 @@
                     font-family: $font-family-geneva;
                     margin: 0;
     }
-}
+    &-btn{        
+        height: 32px;
+        color: white;        
+        cursor: pointer;
+        border-radius: $radius-md;
+        border: none; 
+
+
+        &:hover{
+          transform: scale(1.05)
+        }  
+    }
+}        
+      .subscribe{
+          background-color: $primary-green;
+        }
+        .unsubscribe{
+          background-color: $gray;
+        }
 
 .divider{
       border: none;

@@ -28,6 +28,7 @@ export function TournamentCard({tournament}){
                 <div className="tournament-card-rule"><i className="fa-solid fa-clipboard-list"></i> <p>{tournament.date}</p></div>
                 <div className="tournament-card-rule"><i className="fa-solid fa-location-dot"></i> <p>{tournament.location}</p></div>
             </div>
+            <button className="tournament-card-btn subscribe">Subscribe</button>
         </Link>
     )
 }
