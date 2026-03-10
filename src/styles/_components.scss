@@ -110,7 +110,11 @@
     padding: $space-md;
     border-radius: $radius-md;
     text-decoration: none;
-    color: inherit;
+    
+    &-link{
+      text-decoration: none;
+      color: inherit;
+    }
         &-header{
             display: flex;
             gap: $space-md;

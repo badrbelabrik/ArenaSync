@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StatusBadge } from "./StatusBadge";
 import {Link} from "react-router-dom";
 
@@ -11,8 +11,15 @@ export function CardsContainer({tournaments}){
 }
 
 export function TournamentCard({tournament}){
+    const [subscribed, setSubscribed] = useState(false)
+    function subscribe(e){
+        e.preventDefault()
+        e.stopPropagation()
+        setSubscribed(!subscribed)
+    }
     return (
-        <Link to={`/tournament/${tournament.id}`} className="tournament-card">
+        <div className="tournament-card">
+        <Link to={`/tournament/${tournament.id}`} className="tournament-card-link">
             <div className="tournament-card-header">
                 <img className="tournament-card-header-img" src={tournament.logo} alt="" />
                 <div className="tournament-card-header-flex">
@@ -28,7 +35,9 @@ export function TournamentCard({tournament}){
                 <div className="tournament-card-rule"><i className="fa-solid fa-clipboard-list"></i> <p>{tournament.date}</p></div>
                 <div className="tournament-card-rule"><i className="fa-solid fa-location-dot"></i> <p>{tournament.location}</p></div>
             </div>
-            <button className="tournament-card-btn subscribe">Subscribe</button>
         </Link>
+        <button onClick={subscribe} className={`tournament-card-btn ${subscribed ? "unsubscribe" : "subscribe"}`}> {subscribed ? "Unsubscribe" : "Subscribe"} </button>
+        </div>
+
     )
 }
