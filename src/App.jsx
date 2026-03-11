@@ -7,14 +7,19 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import {Navbar} from './components/Navbar'
 import {TournamentDetails} from "./components/TournamentDetails";
 import {FilterPopup} from "./components/FilterPopup.jsx";
-import { getTournamentslocal} from './data/storage.js'
+import { getTournamentslocal, setTournamentslocal} from './data/storage.js'
 
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("")
   const [tournaments, setTournaments] = useState(getTournamentslocal())
   const [showFilter, setShowFilter] = useState(false)
-  const [selectedSport, setSelectedSport] = useState("All");
+  const [selectedSport, setSelectedSport] = useState("All")
+
+  useEffect(()=>{
+    setTournamentslocal(tournaments)
+  }
+  ,[tournaments])
 
   useEffect(()=>{
     let filtered = [];
@@ -26,8 +31,20 @@ function App() {
         filtered = getTournamentslocal().filter(item => item.sport === selectedSport)
         setTournaments(filtered)
       }
-      
   },[searchTerm,selectedSport])
+
+  function handleSubscribe(id, isSubscribing){
+    setTournaments( prevTournaments =>
+      prevTournaments.map(tournament => tournament.id === id ? {
+        ...tournament,
+        participantsCount: {
+          ...tournament.participantsCount,
+          current: isSubscribing ? tournament.participantsCount.current + 1
+                                 : tournament.participantsCount.current - 1 
+        }
+      } : tournament)
+    )
+  }
 
   return (
     <>
@@ -38,7 +55,7 @@ function App() {
                   <>
                       <Header/>
                       <Searchbar value={searchTerm} onChange={setSearchTerm} onFilterClick={()=>setShowFilter(true)}/>
-                      <CardsContainer tournaments={tournaments}/>
+                      <CardsContainer tournaments={tournaments} onSubscribe={handleSubscribe}/>
                       <Navbar />
                       {showFilter && <FilterPopup onClose={() => setShowFilter(false)} />}
                   </>

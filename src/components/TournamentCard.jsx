@@ -2,20 +2,24 @@ import React, { useState } from "react";
 import { StatusBadge } from "./StatusBadge";
 import {Link} from "react-router-dom";
 
-export function CardsContainer({tournaments}){
+export function CardsContainer({tournaments,onSubscribe}){
     return (
         <div className="container">
-            {tournaments.length > 0 ? tournaments.map(tournament => <TournamentCard key={tournament.id} tournament={tournament} />) : "No Tournaments Found"}
+            {tournaments.length > 0 ? tournaments.map(tournament => <TournamentCard key={tournament.id} tournament={tournament} onSubscribe={onSubscribe} />) : "No Tournaments Found"}
         </div>
     )
 }
 
-export function TournamentCard({tournament}){
+export function TournamentCard({tournament,onSubscribe}){
     const [subscribed, setSubscribed] = useState(false)
+    
     function subscribe(e){
         e.preventDefault()
         e.stopPropagation()
         setSubscribed(!subscribed)
+        onSubscribe(tournament.id,!subscribed)
+        console.log(tournament.participantsCount.current);
+        
     }
     return (
         <div className="tournament-card">
