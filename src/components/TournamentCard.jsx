@@ -11,15 +11,12 @@ export function CardsContainer({tournaments,onSubscribe}){
 }
 
 export function TournamentCard({tournament,onSubscribe}){
-    const [subscribed, setSubscribed] = useState(false)
-    
+
     function subscribe(e){
         e.preventDefault()
         e.stopPropagation()
-        setSubscribed(!subscribed)
-        onSubscribe(tournament.id,!subscribed)
+        onSubscribe(tournament.id,!tournament.subscribed)
         console.log(tournament.participantsCount.current);
-        
     }
     return (
         <div className="tournament-card">
@@ -40,7 +37,7 @@ export function TournamentCard({tournament,onSubscribe}){
                 <div className="tournament-card-rule"><i className="fa-solid fa-location-dot"></i> <p>{tournament.location}</p></div>
             </div>
         </Link>
-        <button onClick={subscribe} className={`tournament-card-btn ${subscribed ? "unsubscribe" : "subscribe"}`}> {subscribed ? "Unsubscribe" : "Subscribe"} </button>
+        <button onClick={subscribe} className={`tournament-card-btn ${tournament.subscribed ? "unsubscribe" : "subscribe"}`}> {tournament.subscribed ? "Unsubscribe" : "Subscribe"} </button>
         </div>
 
     )

@@ -12,7 +12,7 @@ import { getTournamentslocal, setTournamentslocal} from './data/storage.js'
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("")
-  const [tournaments, setTournaments] = useState(getTournamentslocal())
+  const [tournaments, setTournaments] = useState(() => getTournamentslocal())
   const [showFilter, setShowFilter] = useState(false)
   const [selectedSport, setSelectedSport] = useState("All")
 
@@ -32,11 +32,18 @@ function App() {
         setTournaments(filtered)
       }
   },[searchTerm,selectedSport])
+// const filteredTournaments = tournaments.filter(item => {
+//   const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase())
+//   const matchesSport = selectedSport === "All" || item.sport === selectedSport
+
+//   return matchesSearch && matchesSport
+// })
 
   function handleSubscribe(id, isSubscribing){
     setTournaments( prevTournaments =>
       prevTournaments.map(tournament => tournament.id === id ? {
         ...tournament,
+        subscribed: isSubscribing,
         participantsCount: {
           ...tournament.participantsCount,
           current: isSubscribing ? tournament.participantsCount.current + 1
