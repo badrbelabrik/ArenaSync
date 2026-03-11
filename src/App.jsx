@@ -21,23 +21,15 @@ function App() {
   }
   ,[tournaments])
 
-  useEffect(()=>{
-    let filtered = [];
-      if(searchTerm !== ""){
-        filtered = getTournamentslocal().filter(item => item.title.toLowerCase().includes(searchTerm.toLowerCase()))
-        setTournaments(filtered)
-      }
-      if(selectedSport !== "All"){
-        filtered = getTournamentslocal().filter(item => item.sport === selectedSport)
-        setTournaments(filtered)
-      }
-  },[searchTerm,selectedSport])
-// const filteredTournaments = tournaments.filter(item => {
-//   const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase())
-//   const matchesSport = selectedSport === "All" || item.sport === selectedSport
 
-//   return matchesSearch && matchesSport
-// })
+  const filteredTournaments = 
+    tournaments.filter(item => {
+    const matchesSearch =  item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    const matchesSport = tournaments.filter(item => item.sport === selectedSport)
+
+    return matchesSearch && matchesSport
+     })
+
 
   function handleSubscribe(id, isSubscribing){
     setTournaments( prevTournaments =>
@@ -62,7 +54,7 @@ function App() {
                   <>
                       <Header/>
                       <Searchbar value={searchTerm} onChange={setSearchTerm} onFilterClick={()=>setShowFilter(true)}/>
-                      <CardsContainer tournaments={tournaments} onSubscribe={handleSubscribe}/>
+                      <CardsContainer tournaments={filteredTournaments} onSubscribe={handleSubscribe}/>
                       <Navbar />
                       {showFilter && <FilterPopup onClose={() => setShowFilter(false)} />}
                   </>
