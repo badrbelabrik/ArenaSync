@@ -8,12 +8,14 @@ import {Navbar} from './components/Navbar'
 import {TournamentDetails} from "./components/TournamentDetails";
 import {FilterPopup} from "./components/FilterPopup.jsx";
 import { getTournamentslocal, setTournamentslocal} from './data/storage.js'
+import { RegistrationForm } from './components/RegistrationForm.jsx'
 
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("")
   const [tournaments, setTournaments] = useState(() => getTournamentslocal())
   const [showFilter, setShowFilter] = useState(false)
+  const [showForm, setShowForm] = useState(false)
   const [selectedSport, setSelectedSport] = useState("All")
 
   useEffect(()=>{
@@ -38,7 +40,7 @@ function App() {
         subscribed: isSubscribing,
         participantsCount: {
           ...tournament.participantsCount,
-          current: isSubscribing ? tournament.participantsCount.current + 1
+          current: isSubscribing ? tournament.participantsCount.current + 1 
                                  : tournament.participantsCount.current - 1 
         }
       } : tournament)
@@ -57,6 +59,7 @@ function App() {
                       <CardsContainer tournaments={filteredTournaments} onSubscribe={handleSubscribe}/>
                       <Navbar />
                       {showFilter && <FilterPopup onClose={() => setShowFilter(false)} />}
+                      {showForm && <RegistrationForm onClose={() => setShowForm(false)}/>}
                   </>
               }/>
               {/*Tournament Page*/}

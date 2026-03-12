@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StatusBadge } from "./StatusBadge";
 import {Link} from "react-router-dom";
 
-export function CardsContainer({tournaments,onSubscribe}){
+export function CardsContainer({tournaments,onSubscribe,onFormClick}){
     return (
         <div className="container">
             {tournaments.length > 0 ? tournaments.map(tournament => <TournamentCard key={tournament.id} tournament={tournament} onSubscribe={onSubscribe} />) : "No Tournaments Found"}
@@ -16,7 +16,6 @@ export function TournamentCard({tournament,onSubscribe}){
         e.preventDefault()
         e.stopPropagation()
         onSubscribe(tournament.id,!tournament.subscribed)
-        console.log(tournament.participantsCount.current);
     }
     return (
         <div className="tournament-card">
@@ -37,7 +36,7 @@ export function TournamentCard({tournament,onSubscribe}){
                 <div className="tournament-card-rule"><i className="fa-solid fa-location-dot"></i> <p>{tournament.location}</p></div>
             </div>
         </Link>
-        <button onClick={subscribe} className={`tournament-card-btn ${tournament.subscribed ? "unsubscribe" : "subscribe"}`}> {tournament.subscribed ? "Unsubscribe" : "Subscribe"} </button>
+        <button onClick={setShowForm(true)} className={`tournament-card-btn ${tournament.subscribed ? "unsubscribe" : "subscribe"}`}> {tournament.subscribed ? "Unsubscribe" : "Subscribe"} </button>
         </div>
 
     )
