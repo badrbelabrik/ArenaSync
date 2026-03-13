@@ -56,7 +56,7 @@ function App() {
                   <>
                       <Header/>
                       <Searchbar value={searchTerm} onChange={setSearchTerm} onFilterClick={()=>setShowFilter(true)}/>
-                      <CardsContainer tournaments={filteredTournaments} onSubscribe={handleSubscribe}/>
+                      <CardsContainer tournaments={filteredTournaments} onSubscribe={handleSubscribe} setShowForm={setShowForm}/>
                       <Navbar />
                       {showFilter && <FilterPopup onClose={() => setShowFilter(false)} />}
                       {showForm && <RegistrationForm onClose={() => setShowForm(false)}/>}
