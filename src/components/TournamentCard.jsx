@@ -37,7 +37,7 @@ export function TournamentCard({ tournament, onSubscribe, setShowForm }) {
                     <div className="tournament-card-rule"><i className="fa-solid fa-location-dot"></i> <p>{tournament.location}</p></div>
                 </div>
             </Link>
-            <button onClick={() => setShowForm(true)} className={`tournament-card-btn ${tournament.subscribed ? "unsubscribe" : "subscribe"}`}> {tournament.subscribed ? "Unsubscribe" : "Subscribe"} </button>
+            <button onClick={(event) => tournament.subscribed ? subscribe(event) : setShowForm(true)} className={`tournament-card-btn ${tournament.subscribed ? "unsubscribe" : "subscribe"}`}> {tournament.subscribed ? "Unsubscribe" : "Subscribe"} </button>
         </div>
 
     )
