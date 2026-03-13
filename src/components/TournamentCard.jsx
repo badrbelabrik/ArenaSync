@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { StatusBadge } from "./StatusBadge";
 import { Link } from "react-router-dom";
 
-export function CardsContainer({ tournaments, onSubscribe, setShowForm }) {
+export function CardsContainer({ tournaments, onSubscribe, onOpenForm }) {
     return (
         <div className="container">
-            {tournaments.length > 0 ? tournaments.map(tournament => <TournamentCard key={tournament.id} tournament={tournament} onSubscribe={onSubscribe} setShowForm={setShowForm} />) : "No Tournaments Found"}
+            {tournaments.length > 0 ? tournaments.map(tournament => <TournamentCard key={tournament.id} tournament={tournament} onSubscribe={onSubscribe} onOpenForm={onOpenForm} />) : "No Tournaments Found"}
         </div>
     )
 }
 
-export function TournamentCard({ tournament, onSubscribe, setShowForm }) {
+export function TournamentCard({ tournament, onSubscribe, onOpenForm }) {
 
     function subscribe(e) {
         e.preventDefault()
@@ -37,7 +37,7 @@ export function TournamentCard({ tournament, onSubscribe, setShowForm }) {
                     <div className="tournament-card-rule"><i className="fa-solid fa-location-dot"></i> <p>{tournament.location}</p></div>
                 </div>
             </Link>
-            <button onClick={(event) => tournament.subscribed ? subscribe(event) : setShowForm(true)} className={`tournament-card-btn ${tournament.subscribed ? "unsubscribe" : "subscribe"}`}> {tournament.subscribed ? "Unsubscribe" : "Subscribe"} </button>
+            <button onClick={(event) => tournament.subscribed ? subscribe(event) : onOpenForm(tournament)} className={`tournament-card-btn ${tournament.subscribed ? "unsubscribe" : "subscribe"}`}> {tournament.subscribed ? "Unsubscribe" : "Subscribe"} </button>
         </div>
 
     )

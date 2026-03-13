@@ -16,6 +16,7 @@ function App() {
   const [tournaments, setTournaments] = useState(() => getTournamentslocal())
   const [showFilter, setShowFilter] = useState(false)
   const [showForm, setShowForm] = useState(false)
+  const [selectedTournament, setSelectedTournament] = useState(null)
   const [selectedSport, setSelectedSport] = useState("All")
 
   useEffect(()=>{
@@ -47,6 +48,11 @@ function App() {
     )
   }
 
+  function handleOpenForm(tournament){
+      setSelectedTournament(tournament)
+      setShowForm(true)
+  }
+
   return (
     <>
       <BrowserRouter>
@@ -56,10 +62,10 @@ function App() {
                   <>
                       <Header/>
                       <Searchbar value={searchTerm} onChange={setSearchTerm} onFilterClick={()=>setShowFilter(true)}/>
-                      <CardsContainer tournaments={filteredTournaments} onSubscribe={handleSubscribe} setShowForm={setShowForm}/>
+                      <CardsContainer tournaments={filteredTournaments} onSubscribe={handleSubscribe} onOpenForm={handleOpenForm}/>
                       <Navbar />
                       {showFilter && <FilterPopup onClose={() => setShowFilter(false)} />}
-                      {showForm && <RegistrationForm onClose={() => setShowForm(false)}/>}
+                      {showForm && <RegistrationForm tournaments={tournaments} tournament={selectedTournament} onClose={() => setShowForm(false)}/>}
                   </>
               }/>
               {/*Tournament Page*/}
