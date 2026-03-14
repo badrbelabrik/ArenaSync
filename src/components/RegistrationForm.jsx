@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export function RegistrationForm({tournaments,tournament,onClose}){
+export function RegistrationForm({tournaments,tournament,handleSubscribe,onClose}){
     const [formData, setFormData] = useState({name:"", team:"", level:""})
     const [errors, setErrors] = useState({})
     const isFormEmpty = !formData.name.trim() || !formData.team.trim() || !formData.level
@@ -14,7 +14,7 @@ export function RegistrationForm({tournaments,tournament,onClose}){
     }
 
 
-    function validateForm(){
+    function validateForm(onClose){
         const newErrors = {}
 
         const nameRegex = /^[A-Za-z\s]{3,}$/
@@ -39,29 +39,31 @@ export function RegistrationForm({tournaments,tournament,onClose}){
         return Object.keys(newErrors).length === 0
     }
 
-    function handleSubmit(e){
+    function handleSubmit(e,onClose){
         e.preventDefault()
+        const isValid = validateForm()
 
-        if(!validateForm()) {
-            console.log('form is not submiting',tournament)
-        } else if(validateForm){
+        if(!isValid) {
             console.log('Form submitted', tournaments)
+            return
         }
 
-        
-
+        handleSubscribe(tournament.id,true,formData)
+        onclose
     }
 
     return(
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={(event)=>handleSubmit(event,onClose)}>
             
             <div className="form-content">
                 <button className="form-close" onClick={onClose}>×</button>
                 <p className="form-content-title">Registration Form</p>
                 <label htmlFor="name">Name :</label>
                 <input onChange={(event)=> handleChange(event)} id="name" name="name" value={formData.name} type="text" placeholder="name"/>
+                {errors.name && <span className="form-error">{errors.name}</span>}
                 <label htmlFor="team">Team :</label>
                 <input onChange={(event)=> handleChange(event)} id="team" name="team" value={formData.team} type="text" placeholder="team"/>
+                {errors.team && <span className="form-error">{errors.team}</span>}
                 <label htmlFor="level">Level :</label>
                 <select onChange={(event)=> handleChange(event)} name="level" value={formData.level}  id="level">
                     <option value="" disabled defaultValue hidden>-- Select your level --</option>

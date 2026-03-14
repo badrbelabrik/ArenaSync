@@ -34,11 +34,23 @@ function App() {
      })
 
 
-  function handleSubscribe(id, isSubscribing){
+  function handleSubscribe(id, isSubscribing, formData){
+    const participantId = "u88test"
     setTournaments( prevTournaments =>
       prevTournaments.map(tournament => tournament.id === id ? {
         ...tournament,
         subscribed: isSubscribing,
+        participants: isSubscribing && formData ?
+        [
+          ...tournament.participants,{
+            id: participantId,
+            avatar: "https://i.pravatar.cc/150?u=u2",
+            name: formData.name,
+            // team: formData.team,
+            // level: formData.level,
+            status: "Confirmed"
+          }
+        ] : tournament.participants.filter(item => item.id !== participantId),
         participantsCount: {
           ...tournament.participantsCount,
           current: isSubscribing ? tournament.participantsCount.current + 1 
@@ -65,7 +77,7 @@ function App() {
                       <CardsContainer tournaments={filteredTournaments} onSubscribe={handleSubscribe} onOpenForm={handleOpenForm}/>
                       <Navbar />
                       {showFilter && <FilterPopup onClose={() => setShowFilter(false)} />}
-                      {showForm && <RegistrationForm tournaments={tournaments} tournament={selectedTournament} onClose={() => setShowForm(false)}/>}
+                      {showForm && <RegistrationForm tournaments={tournaments} tournament={selectedTournament} handleSubscribe={handleSubscribe} onClose={() => setShowForm(false)}/>}
                   </>
               }/>
               {/*Tournament Page*/}

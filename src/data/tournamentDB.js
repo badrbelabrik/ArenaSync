@@ -184,3 +184,5 @@ export const tournamentDB = [
     sport: "Chess",
   }
 ];
+
+// setTournamentslocal(tournamentDB)
