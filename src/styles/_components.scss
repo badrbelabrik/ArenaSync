@@ -286,13 +286,12 @@
     font-weight: $font-weight-bold;
     color: white;
     cursor: pointer;
-    &:hover{
+  }
+}
+    .active{
       color: $primary-color;
       background: transparentize(white, 0.1);
     }
-
-  }
-}
 
 .details{
   @include flex-col-center;

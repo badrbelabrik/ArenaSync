@@ -7,12 +7,12 @@ import { Tabsystem } from "./TabSystem.jsx";
 import { ParticipantRow } from "./ParticipantRow.jsx";
 import { useNavigate } from "react-router-dom";
 
-export function TournamentDetails() {
+export function TournamentDetails({tournaments}) {
   const navigate = useNavigate();
   const { id } = useParams();
-  const [tournament, setTournament] = useState(
-    tournamentDB.find((item) => item.id == id),
-  );
+  const tournament = tournaments.find((item) => item.id == id)
+  const [activeTab, setActiveTab] = useState("participants")
+
   return (
     <div className="details">
       <div className="details-header">
@@ -61,9 +61,24 @@ export function TournamentDetails() {
             </div>
           </div>
         </div>
-        <Tabsystem />
+        <Tabsystem activeTab={activeTab} setActiveTab={setActiveTab}/>
       </div>
-      <div className="details-participantslist">
+      {activeTab === "info" && (
+                <div className="details-participantslist">
+          <h2>Subscribed Player Info</h2>
+
+          {tournament.subscribedPlayer ? (
+            <div className="details-info">
+              <p><strong>Name:</strong> {tournament.subscribedPlayer.name}</p>
+              <p><strong>Team:</strong> {tournament.subscribedPlayer.team}</p>
+              <p><strong>Level:</strong> {tournament.subscribedPlayer.level}</p>
+            </div>
+          ) : (
+            "No subscribed player found"
+          )}
+        </div>
+      )}
+      {activeTab === "participants" && (<div className="details-participantslist">
         <h2>Participants List</h2>
         <div className="details-participantslist-participants">
           {tournament.participants.length > 0
@@ -77,7 +92,8 @@ export function TournamentDetails() {
             ))
             : "No Participants Found"}
         </div>
-      </div>
+      </div>)}
+          
     </div>
   );
 }

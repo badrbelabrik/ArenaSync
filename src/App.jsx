@@ -83,7 +83,7 @@ function App() {
               {/*Tournament Page*/}
               <Route path="/tournament/:id" element={
                   <>
-                    <TournamentDetails />
+                    <TournamentDetails tournaments={tournaments} />
                     <Navbar />
                   </>
               }/>

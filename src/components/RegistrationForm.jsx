@@ -39,21 +39,21 @@ export function RegistrationForm({tournaments,tournament,handleSubscribe,onClose
         return Object.keys(newErrors).length === 0
     }
 
-    function handleSubmit(e,onClose){
+    function handleSubmit(e){
         e.preventDefault()
         const isValid = validateForm()
 
         if(!isValid) {
-            console.log('Form submitted', tournaments)
+            console.log('Form didnt submitted', tournaments)
             return
         }
 
         handleSubscribe(tournament.id,true,formData)
-        onclose
+        onClose()
     }
 
     return(
-        <form className="form" onSubmit={(event)=>handleSubmit(event,onClose)}>
+        <form className="form" onSubmit={(event)=>handleSubmit(event)}>
             
             <div className="form-content">
                 <button className="form-close" onClick={onClose}>×</button>
