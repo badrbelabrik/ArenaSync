@@ -1,3 +1,4 @@
+import { setTournamentslocal } from "./storage";
 
 
 export const tournamentDB = [
@@ -8,6 +9,7 @@ export const tournamentDB = [
     description:
       "Top players battle it out with skillful rallies and powerful smashes.",
     participantsCount: { current: 24, max: 32 },
+    subscribed: false,
     participants: [
       { id: "u1", name: "Ethan Miller", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u1" },
       { id: "u2", name: "Noah Smith", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u2" },
@@ -27,6 +29,7 @@ export const tournamentDB = [
     status: "Upcoming",
     description: "Intense games filled with teamwork, speed, and sharp shooting.",
     participantsCount: { current: 8, max: 12 },
+    subscribed: false,
     participants: [],
     visibility: "Community",
     format: "League",
@@ -41,6 +44,7 @@ export const tournamentDB = [
     status: "Upcoming",
     description: "Rapid and classic matches for all levels with official pairing.",
     participantsCount: { current: 56, max: 64 },
+    subscribed: false,
     participants: [
       { id: "u5", name: "Aiden Davis", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u5" },
       { id: "u6", name: "Daniel Thomas", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u6" }
@@ -58,6 +62,7 @@ export const tournamentDB = [
     status: "Completed",
     description: "Fast-paced 5v5 tournament with group stage and playoffs.",
     participantsCount: { current: 16, max: 16 },
+    subscribed: false,
     participants: [
       { id: "u1", name: "Ethan Miller", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u1" },
       { id: "u2", name: "Noah Smith", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u2" },
@@ -76,6 +81,7 @@ export const tournamentDB = [
     status: "On Going",
     description: "Quick matches, best-of-5 sets, and a double-elim finals.",
     participantsCount: { current: 12, max: 24 },
+    subscribed: false,
     participants: [
       { id: "u5", name: "Aiden Davis", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u5" },
       { id: "u6", name: "Daniel Thomas", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u6" }
@@ -93,6 +99,7 @@ export const tournamentDB = [
     status: "Upcoming",
     description: "High energy matches with strong spikes and team coordination.",
     participantsCount: { current: 10, max: 16 },
+    subscribed: false,
     participants: [
       { id: "u7", name: "Lucas Brown", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u7" },
       { id: "u8", name: "Mason Wilson", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u8" }
@@ -110,6 +117,7 @@ export const tournamentDB = [
     status: "On Going",
     description: "3v3 street basketball tournament with fast paced action.",
     participantsCount: { current: 6, max: 12 },
+    subscribed: false,
     participants: [
       { id: "u9", name: "Oliver Garcia", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u9" },
       { id: "u10", name: "Benjamin Martinez", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u10" }
@@ -127,6 +135,7 @@ export const tournamentDB = [
     status: "Upcoming",
     description: "Outdoor tennis tournament open to all amateur players.",
     participantsCount: { current: 14, max: 32 },
+    subscribed: false,
     participants: [
       { id: "u11", name: "William Taylor", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u11" },
       { id: "u12", name: "Henry Moore", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u12" }
@@ -144,6 +153,7 @@ export const tournamentDB = [
     status: "Completed",
     description: "Regional players compete in intense badminton matches.",
     participantsCount: { current: 32, max: 32 },
+    subscribed: false,
     participants: [
       { id: "u13", name: "Alexander Scott", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u13" },
       { id: "u14", name: "Sebastian Adams", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u14" }
@@ -161,6 +171,7 @@ export const tournamentDB = [
     status: "Upcoming",
     description: "Strategic chess battles between the best local players.",
     participantsCount: { current: 40, max: 64 },
+    subscribed: false,
     participants: [
       { id: "u15", name: "Michael Clark", status: "Confirmed", avatar: "https://i.pravatar.cc/150?u=u15" },
       { id: "u16", name: "Jack Lewis", status: "Pending", avatar: "https://i.pravatar.cc/150?u=u16" }
@@ -173,3 +184,5 @@ export const tournamentDB = [
     sport: "Chess",
   }
 ];
+
+// setTournamentslocal(tournamentDB)

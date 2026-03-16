@@ -1,18 +1,14 @@
 import React from "react";
 
-export function StatusBadge(props){
-    let color = () => {
-        if(props.status === "On Going"){
-            return "badge badge-green"
-        } else if(props.status === "Upcoming"){
-            return "badge badge-blue"
-        } else {
-            return "badge badge-gray"
-        }
+export function StatusBadge({status}){
+    const Color = {
+        "On Going" : "badge badge-green",
+        "Upcoming" : "badge badge-blue",
+        "Completed" : "badge badge-gray"
     }
     return(
-        <div className={color()}>
-            <h2 className="badge-title">{props.status}</h2>
+        <div className={Color[status]}>
+            <h2 className="badge-title">{status}</h2>
         </div>
     )
 }
